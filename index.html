@@ -18,7 +18,7 @@
     <!-- Lucide Icons for premium feel -->
     <script src="https://unpkg.com/lucide@latest"></script>
     
-    <link rel="stylesheet" href="styles.css?v=20260706">
+    <link rel="stylesheet" href="styles.css?v=20260706-2">
 </head>
 <body>
     <div class="container">
@@ -493,7 +493,23 @@
             <div class="section-title-eng">RSVP</div>
             <h2 class="rsvp-modal-title">참석 의사 전달</h2>
             <div class="divider"></div>
-            <p class="rsvp-intro-text">원활한 예식 준비를 위해 참석 여부를 알려주시면 감사하겠습니다.<br>작성을 원치 않으시면 <strong>X</strong>를 눌러 닫아주세요.</p>
+
+            <!-- 예식 정보: 참석 결정을 위해 장소/시간을 먼저 안내 -->
+            <div class="rsvp-info-box">
+                <div class="rsvp-info-row">
+                    <span class="rsvp-info-label">일시</span>
+                    <span class="rsvp-info-value" id="rsvp-info-datetime">-</span>
+                </div>
+                <div class="rsvp-info-row">
+                    <span class="rsvp-info-label">장소</span>
+                    <span class="rsvp-info-value">
+                        <span class="rsvp-info-venue" id="rsvp-info-venue">-</span>
+                        <span class="rsvp-info-address" id="rsvp-info-address">-</span>
+                    </span>
+                </div>
+            </div>
+
+            <p class="rsvp-intro-text">원활한 예식 준비를 위해 참석 여부를 알려주시면 감사하겠습니다.</p>
 
             <form id="rsvp-form" class="rsvp-form">
                 <div class="rsvp-field">
@@ -525,6 +541,12 @@
                 <button type="submit" class="submit-btn" id="rsvp-submit-btn">참석 정보 전달하기</button>
                 <p id="rsvp-status" class="rsvp-status"></p>
             </form>
+
+            <!-- 하단 제어 버튼 -->
+            <div class="rsvp-modal-actions">
+                <button type="button" class="rsvp-dismiss-btn" id="rsvp-hide-today-btn">오늘 그만보기</button>
+                <button type="button" class="rsvp-dismiss-btn" id="rsvp-close-btn">닫기</button>
+            </div>
         </div>
     </div>
 
@@ -543,6 +565,6 @@
     <div class="toast" id="toast">계좌번호가 복사되었습니다.</div>
 
     <!-- Application JavaScript -->
-    <script src="app.js?v=20260706"></script>
+    <script src="app.js?v=20260706-2"></script>
 </body>
 </html>

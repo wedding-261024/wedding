@@ -1479,13 +1479,13 @@ body {
     position: relative;
     z-index: 1;
     width: 100%;
-    max-width: 440px;
+    max-width: 360px;
     max-height: calc(100vh - 2.4rem);
     overflow-y: auto;
     background-color: var(--bg-color);
-    border-radius: 18px;
+    border-radius: 16px;
     box-shadow: 0 20px 60px rgba(26, 22, 33, 0.35);
-    padding: 2.4rem 1.6rem 2rem;
+    padding: 1.8rem 1.3rem 1.5rem;
     transform: translateY(16px) scale(0.98);
     transition: transform 0.3s ease;
 }
@@ -1496,7 +1496,7 @@ body {
 
 .rsvp-modal-title {
     font-family: var(--font-serif);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 500;
     text-align: center;
     color: var(--text-dark);
@@ -1529,4 +1529,86 @@ body {
 .rsvp-modal-close svg {
     width: 22px;
     height: 22px;
+}
+
+/* 예식 정보 박스 (일시/장소 우선 안내) */
+.rsvp-info-box {
+    background-color: var(--lavender-light);
+    border-radius: 12px;
+    padding: 0.9rem 1rem;
+    margin: 1.2rem auto 1rem;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+}
+
+.rsvp-info-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.7rem;
+}
+
+.rsvp-info-label {
+    flex-shrink: 0;
+    width: 2.4rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--lavender-dark);
+    letter-spacing: 0.02em;
+}
+
+.rsvp-info-value {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    font-size: 0.86rem;
+    line-height: 1.5;
+    color: var(--text-dark);
+    word-break: keep-all;
+}
+
+.rsvp-info-venue {
+    font-weight: 600;
+}
+
+.rsvp-info-address {
+    font-size: 0.76rem;
+    color: var(--text-muted, #8a8391);
+}
+
+/* 모달 내부 여백 축소 */
+.rsvp-modal-card .rsvp-intro-text {
+    font-size: 0.82rem;
+    margin-bottom: 1.2rem;
+}
+
+.rsvp-modal-card .rsvp-form {
+    gap: 0.9rem;
+}
+
+/* 하단 제어 버튼 (오늘 그만보기 / 닫기) */
+.rsvp-modal-actions {
+    display: flex;
+    gap: 0.6rem;
+    margin-top: 1.1rem;
+}
+
+.rsvp-dismiss-btn {
+    flex: 1;
+    padding: 0.6rem 0.5rem;
+    background-color: transparent;
+    border: 1px solid var(--border-color, #e5e0ec);
+    border-radius: 8px;
+    color: var(--text-muted, #8a8391);
+    font-family: inherit;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.rsvp-dismiss-btn:hover {
+    background-color: var(--lavender-light);
+    color: var(--lavender-dark);
+    border-color: var(--lavender-medium, #d9cef0);
 }

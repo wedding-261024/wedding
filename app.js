@@ -809,6 +809,39 @@ function closeRsvpModal() {
     try { sessionStorage.setItem('rsvp_banner_dismissed', '1'); } catch (e) {}
 }
 
+// 오늘 하루 동안 자동으로 다시 띄우지 않음
+function getTodayStr() {
+    const d = new Date();
+    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+}
+
+function hideRsvpForToday() {
+    try { localStorage.setItem('rsvp_banner_hide_date', getTodayStr()); } catch (e) {}
+    closeRsvpModal();
+}
+
+// 팝업 상단에 예식 일시/장소 정보 채우기 (참석 결정을 돕기 위해)
+function populateRsvpInfo() {
+    const venueEl = document.getElementById('rsvp-info-venue');
+    const addrEl = document.getElementById('rsvp-info-address');
+    const dtEl = document.getElementById('rsvp-info-datetime');
+    if (venueEl) venueEl.innerText = currentConfig.venueName;
+    if (addrEl) addrEl.innerText = currentConfig.venueAddress;
+    if (dtEl) {
+        const dateObj = new Date(currentConfig.weddingDate);
+        const weekdaysKr = ["일", "월", "화", "수", "목", "금", "토"];
+        const wDay = weekdaysKr[dateObj.getDay()];
+        const timeParts = (currentConfig.weddingTime || "12:00").split(":");
+        let hour = parseInt(timeParts[0], 10);
+        const minute = timeParts[1] || "00";
+        const meridiem = hour < 12 ? "오전" : "오후";
+        let displayHour = hour % 12;
+        if (displayHour === 0) displayHour = 12;
+        const minuteStr = (minute === "00") ? "" : ` ${minute}분`;
+        dtEl.innerText = `${dateObj.getFullYear()}년 ${dateObj.getMonth() + 1}월 ${dateObj.getDate()}일 ${wDay}요일 ${meridiem} ${displayHour}시${minuteStr}`;
+    }
+}
+
 function initRsvpModal() {
     const modal = document.getElementById('rsvp-modal');
     if (!modal) return;
@@ -816,10 +849,19 @@ function initRsvpModal() {
     const backdrop = document.getElementById('rsvp-modal-backdrop');
     const closeBtn = document.getElementById('rsvp-modal-close');
     const openBtn = document.getElementById('rsvp-open-btn');
+    const closeBtnBottom = document.getElementById('rsvp-close-btn');
+    const hideTodayBtn = document.getElementById('rsvp-hide-today-btn');
 
-    // 닫기: X 버튼 / 배경 클릭
+    // 예식 일시/장소 정보 표시
+    populateRsvpInfo();
+
+    // 닫기: X 버튼 / 배경 클릭 / 하단 '닫기' 버튼
     if (closeBtn) closeBtn.addEventListener('click', closeRsvpModal);
     if (backdrop) backdrop.addEventListener('click', closeRsvpModal);
+    if (closeBtnBottom) closeBtnBottom.addEventListener('click', closeRsvpModal);
+
+    // 하단 '오늘 그만보기' 버튼
+    if (hideTodayBtn) hideTodayBtn.addEventListener('click', hideRsvpForToday);
 
     // ESC 키로 닫기
     document.addEventListener('keydown', function(e) {
@@ -831,10 +873,13 @@ function initRsvpModal() {
     // 본문의 '참석 여부 작성하기' 버튼으로 다시 열기
     if (openBtn) openBtn.addEventListener('click', openRsvpModal);
 
-    // 첫 방문 시 자동으로 배너 표시 (같은 세션에서 이미 닫았다면 생략)
+    // 첫 방문 시 자동으로 배너 표시
+    // (같은 세션에서 이미 닫았거나, '오늘 그만보기'를 누른 당일이면 생략)
     let dismissed = false;
     try { dismissed = sessionStorage.getItem('rsvp_banner_dismissed') === '1'; } catch (e) {}
-    if (!dismissed) {
+    let hiddenToday = false;
+    try { hiddenToday = localStorage.getItem('rsvp_banner_hide_date') === getTodayStr(); } catch (e) {}
+    if (!dismissed && !hiddenToday) {
         setTimeout(openRsvpModal, 700);
     }
 }
