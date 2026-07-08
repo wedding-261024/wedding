@@ -1,15 +1,15 @@
 /* --- Reset & Global Variables --- */
 :root {
     --bg-color: #FFFFFF;         /* Pure White */
-    --bg-soft: #F9F8FA;          /* Milk Lavender White */
-    --lavender-light: #F3EEF8;   /* Very Light Lavender tint */
-    --lavender-medium: #DCD0EC;  /* Pastel Lavender Accent */
-    --lavender-dark: #8E75A9;    /* Deep Lavender */
-    --lavender-hover: #7B6296;   /* Darker Lavender for Hovers */
-    --text-dark: #2C2633;        /* Deep Charcoal Purple */
-    --text-muted: #786E83;       /* Muted Grey-Purple */
-    --border-color: #EAE6EF;     /* Delicate Lavender borders */
-    --shadow-color: rgba(142, 117, 169, 0.08);
+    --bg-soft: #FFFDF5;          /* Warm Ivory White */
+    --lavender-light: #FBF3D9;   /* Very Light Gold tint */
+    --lavender-medium: #EBD180;  /* Soft Pastel Gold Accent */
+    --lavender-dark: #B8860B;    /* Deep Goldenrod */
+    --lavender-hover: #9C7108;   /* Darker Gold for Hovers */
+    --text-dark: #33291A;        /* Deep Warm Charcoal */
+    --text-muted: #8A7A55;       /* Muted Warm Gold-Grey */
+    --border-color: #F0E6C8;     /* Delicate Gold borders */
+    --shadow-color: rgba(184, 134, 11, 0.08);
     
     --font-eng: 'Cinzel', serif;
     --font-serif: 'Noto Serif KR', serif;
@@ -33,7 +33,7 @@ img {
 }
 
 body {
-    background-color: #ECEAF0; /* Light pastel grey-purple outer background */
+    background-color: #EFE9D8; /* Light warm gold-grey outer background */
     font-family: var(--font-serif);
     color: var(--text-dark);
     line-height: 1.8;
@@ -51,7 +51,7 @@ body {
     width: 100%;
     max-width: 480px;
     background-color: var(--bg-color);
-    box-shadow: 0 10px 40px rgba(142, 117, 169, 0.12);
+    box-shadow: 0 10px 40px rgba(184, 134, 11, 0.12);
     position: relative;
     overflow-x: hidden;
     min-height: 100vh;
@@ -96,14 +96,14 @@ body {
     overflow: hidden;
     flex-shrink: 0;
     border: 3px solid #fff;
-    box-shadow: 0 6px 18px rgba(142, 117, 169, 0.25);
+    box-shadow: 0 6px 18px rgba(184, 134, 11, 0.25);
 }
 
 /* 가운데 사진을 살짝 키워 리듬감을 준다 */
 .greeting-badge:nth-child(2) {
     width: 31vw;
     max-width: 112px;
-    box-shadow: 0 8px 22px rgba(142, 117, 169, 0.3);
+    box-shadow: 0 8px 22px rgba(184, 134, 11, 0.3);
 }
 
 .greeting-badge-img {
@@ -296,7 +296,7 @@ body {
 
 .relation {
     font-size: 0.85rem;
-    color: #887e93;
+    color: #9c8c63;
     margin: 0 0.8rem;
 }
 
@@ -385,7 +385,7 @@ body {
     background-color: var(--lavender-dark);
     border-radius: 50%;
     z-index: -1;
-    box-shadow: 0 2px 8px rgba(142, 117, 169, 0.4);
+    box-shadow: 0 2px 8px rgba(184, 134, 11, 0.4);
     animation: softPulse 2s infinite;
 }
 
@@ -461,7 +461,7 @@ body {
     overflow: hidden;
     aspect-ratio: 1 / 1;
     background-color: var(--lavender-light);
-    box-shadow: 0 2px 8px rgba(142, 117, 169, 0.04);
+    box-shadow: 0 2px 8px rgba(184, 134, 11, 0.04);
 }
 
 .gallery-item.first-main-span {
@@ -601,7 +601,7 @@ body {
     padding: 0.3rem 0.7rem;
     border-radius: 4px;
     margin-top: 0.3rem;
-    box-shadow: 0 4px 10px rgba(142, 117, 169, 0.25);
+    box-shadow: 0 4px 10px rgba(184, 134, 11, 0.25);
     font-weight: 500;
     white-space: nowrap;
 }
@@ -1084,7 +1084,7 @@ body {
     color: #FFF;
     border: none;
     border-radius: 50%;
-    box-shadow: 0 4px 15px rgba(142, 117, 169, 0.4);
+    box-shadow: 0 4px 15px rgba(184, 134, 11, 0.4);
     cursor: pointer;
     z-index: 999;
     display: flex;
@@ -1170,7 +1170,7 @@ body {
     border: 1px solid var(--border-color);
     border-radius: 8px;
     padding: 1.2rem;
-    box-shadow: 0 2px 6px rgba(142, 117, 169, 0.02);
+    box-shadow: 0 2px 6px rgba(184, 134, 11, 0.02);
 }
 
 .edit-section-title {
