@@ -162,7 +162,7 @@ function loadConfiguration() {
     
     // Load images asynchronously from IndexedDB
     dbStore.get('custom_hero_img', (heroBase64) => {
-        const heroImg = heroBase64 || "images/gallery_04.jpg";
+        const heroImg = heroBase64 || "images/gallery_17.jpg";
         document.getElementById('hero-wedding-img').src = heroImg;
         
         dbStore.get('custom_gallery_images', (galleryArray) => {
@@ -525,7 +525,7 @@ function initLightbox(imagesList) {
         newHeroOverlay.addEventListener('click', function() {
             // Hero expands inside lightbox with hero source
             dbStore.get('custom_hero_img', (heroBase64) => {
-                const src = heroBase64 || "images/gallery_04.jpg";
+                const src = heroBase64 || "images/gallery_17.jpg";
                 openLightbox(0); // Opens lightbox at index 0 (using current imagesList)
                 // Temp override source for hero
                 lightboxImg.src = src;
@@ -915,7 +915,7 @@ function initEditor() {
                 previewHeroImg.src = heroBase64;
                 tempUploadedImages.heroImg = heroBase64;
             } else {
-                previewHeroImg.src = "images/gallery_04.jpg";
+                previewHeroImg.src = "images/gallery_17.jpg";
             }
             
             dbStore.get('custom_gallery_images', (galleryArray) => {
@@ -1130,7 +1130,7 @@ function initEditor() {
         
         Promise.all(savePromises).then(() => {
             // Re-render and apply changes
-            const heroSrc = tempUploadedImages.heroImg || "images/gallery_04.jpg";
+            const heroSrc = tempUploadedImages.heroImg || "images/gallery_17.jpg";
             document.getElementById('hero-wedding-img').src = heroSrc;
             
             const list = (tempUploadedImages.gallery && tempUploadedImages.gallery.length > 0) ? tempUploadedImages.gallery : generateDefaultGalleryArray();
