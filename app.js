@@ -198,7 +198,6 @@ function generateDefaultGalleryArray() {
         "images/gallery_27.jpg",
         "images/gallery_28.jpg",
         "images/gallery_29.jpg",
-        "images/gallery_30.jpg",
         "images/gallery_31.jpg",
         "images/gallery_33.jpg"
     ];
