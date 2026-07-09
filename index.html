@@ -18,7 +18,7 @@
     <!-- Lucide Icons for premium feel -->
     <script src="https://unpkg.com/lucide@latest"></script>
     
-    <link rel="stylesheet" href="styles.css?v=20260706-7">
+    <link rel="stylesheet" href="styles.css?v=20260706-8">
 </head>
 <body>
     <div class="container">
@@ -139,22 +139,48 @@
 
         <!-- Gallery Section -->
         <section class="section gallery animate-on-scroll">
-            <div class="section-title-eng">GALLERY</div>
-            <h2 class="section-title">우리의 아름다운 순간</h2>
+            <div class="section-title-eng">MOMENTS TOGETHER</div>
+            <h2 class="section-title">우리가 함께한 순간</h2>
             <div class="divider"></div>
-            
+
             <!-- Dynamic Gallery Grid supporting up to 30 photos -->
             <div class="gallery-grid" id="gallery-grid">
                 <!-- Will be populated dynamically by app.js -->
             </div>
-            
+
             <div class="gallery-toggle-container" id="gallery-toggle-container" style="display: none;">
                 <button class="gallery-toggle-btn" id="btn-gallery-toggle">
                     <span id="txt-gallery-toggle">더보기</span>
                     <i data-lucide="chevron-down" id="icon-gallery-toggle"></i>
                 </button>
             </div>
-            
+
+            <!-- 예식 안내: 성경 구절 + 가톨릭 혼배 성사 안내 -->
+            <div class="ceremony-note">
+                <div class="scripture-quote">
+                    <p class="scripture-title">Vida Nueva!</p>
+                    <p class="scripture-text">그분 사랑이 우리에게서 완성됩니다</p>
+                    <p class="scripture-ref">[1요한 4,12]</p>
+                </div>
+
+                <p class="ceremony-text">
+                    저희의 결혼식은<br>
+                    거룩한 가톨릭 혼배 성사로<br>
+                    약 1시간 동안 진행됩니다.
+                </p>
+                <p class="ceremony-text">
+                    낯설고 긴 예식일 수 있지만,<br>
+                    두 사람이 부부로서 첫걸음을 떼는<br>
+                    성스러운 순간을 처음부터 함께 기도해 주신다면<br>
+                    그 어떤 축하보다 귀한 선물이 될 것입니다.
+                </p>
+                <p class="ceremony-text">
+                    일정이나 상황으로 인해<br>
+                    미사 참례가 어려우신 분들을 위해,<br>
+                    지하 1층에 따뜻한 식사도 미리 준비해 두었으니<br>
+                    편안하게 걸음 해주시길 바랍니다.
+                </p>
+            </div>
 
         </section>
 
@@ -597,6 +623,6 @@
     <div class="toast" id="toast">계좌번호가 복사되었습니다.</div>
 
     <!-- Application JavaScript -->
-    <script src="app.js?v=20260706-7"></script>
+    <script src="app.js?v=20260706-8"></script>
 </body>
 </html>
