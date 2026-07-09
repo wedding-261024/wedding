@@ -794,8 +794,19 @@ function initRsvp() {
 function openRsvpModal() {
     const modal = document.getElementById('rsvp-modal');
     if (!modal) return;
+    showRsvpStep(1); // 열 때는 항상 1단계(요약 배너)부터
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
+}
+
+// 1단계(요약 배너) <-> 2단계(입력 폼) 전환
+function showRsvpStep(step) {
+    const step1 = document.getElementById('rsvp-step-1');
+    const step2 = document.getElementById('rsvp-step-2');
+    if (!step1 || !step2) return;
+    const isForm = (step === 2);
+    step1.hidden = isForm;
+    step2.hidden = !isForm;
 }
 
 function closeRsvpModal() {
@@ -849,9 +860,15 @@ function initRsvpModal() {
     const openBtn = document.getElementById('rsvp-open-btn');
     const closeBtnBottom = document.getElementById('rsvp-close-btn');
     const hideTodayBtn = document.getElementById('rsvp-hide-today-btn');
+    const gotoFormBtn = document.getElementById('rsvp-goto-form-btn');
+    const backBtn = document.getElementById('rsvp-back-btn');
 
     // 예식 일시/장소 정보 표시
     populateRsvpInfo();
+
+    // 2단계 전환: '참석 여부 체크하기' -> 폼 / '뒤로' -> 요약 배너
+    if (gotoFormBtn) gotoFormBtn.addEventListener('click', () => showRsvpStep(2));
+    if (backBtn) backBtn.addEventListener('click', () => showRsvpStep(1));
 
     // 닫기: X 버튼 / 배경 클릭 / 하단 '닫기' 버튼
     if (closeBtn) closeBtn.addEventListener('click', closeRsvpModal);

@@ -1621,6 +1621,34 @@ body {
     gap: 0.9rem;
 }
 
+/* 2-depth 단계 전환 */
+.rsvp-step[hidden] {
+    display: none;
+}
+
+.rsvp-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-family: inherit;
+    font-size: 0.82rem;
+    cursor: pointer;
+    padding: 4px 6px;
+    margin: 0 0 0.4rem -6px;
+}
+
+.rsvp-back-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+.rsvp-back-btn:hover {
+    color: var(--lavender-dark);
+}
+
 /* 하단 제어 버튼 (오늘 그만보기 / 닫기) */
 .rsvp-modal-actions {
     display: flex;
