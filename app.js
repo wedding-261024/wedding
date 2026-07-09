@@ -194,8 +194,6 @@ function generateDefaultGalleryArray() {
         "images/gallery_19.jpg",
         "images/gallery_20.jpg",
         "images/gallery_21.jpg",
-        "images/gallery_22.jpg",
-        "images/gallery_23.jpg",
         "images/gallery_24.jpg",
         "images/gallery_25.jpg",
         "images/gallery_26.jpg",
