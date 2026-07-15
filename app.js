@@ -107,17 +107,17 @@ const DEFAULT_CONFIG = {
 저희 두 사람의 약속을 완성하는 특별한 날,
 가까이서 축복해 주시면 더없는 기쁨이 되겠습니다.
 귀한 발걸음으로 저희의 시작을 함께해 주십시오.`,
-    groomBank1: "카카오페이",
-    groomAccount1: "02000659985",
+    groomBank1: "카카오뱅크",
+    groomAccount1: "3333-08-3918476",
     groomOwner1: "이건호",
     groomBankParent: "우리은행",
     groomAccountParent: "1002-355-758209",
     groomOwnerParent: "이승우 (혼주)",
-    brideBank1: "신한은행",
-    brideAccount1: "110-537-357340",
+    brideBank1: "카카오뱅크",
+    brideAccount1: "3333-05-9940781",
     brideOwner1: "최서희",
     brideBankParent: "카카오뱅크",
-    brideAccountParent: "3333368233766",
+    brideAccountParent: "3333-36-8233766",
     brideOwnerParent: "황유림 (혼주)"
 };
 
