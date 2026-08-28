@@ -112,13 +112,13 @@ const DEFAULT_CONFIG = {
     groomOwner1: "이건호",
     groomBankParent: "우리은행",
     groomAccountParent: "1002-355-758209",
-    groomOwnerParent: "이승우 (혼주)",
+    groomOwnerParent: "이승우",
     brideBank1: "카카오뱅크",
     brideAccount1: "3333-05-9940781",
     brideOwner1: "최서희",
     brideBankParent: "카카오뱅크",
     brideAccountParent: "3333-36-8233766",
-    brideOwnerParent: "황유림 (혼주)"
+    brideOwnerParent: "황유림"
 };
 
 // Initialize application
