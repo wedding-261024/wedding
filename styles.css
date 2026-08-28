@@ -837,7 +837,7 @@ body {
 }
 
 .accordion-item.active .accordion-content {
-    max-height: 300px;
+    max-height: 600px;
 }
 
 .account-card {
