@@ -240,12 +240,12 @@ body {
 }
 
 .cp-baptismal {
-    font-family: var(--font-eng);
-    font-size: 0.8rem;
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
     font-weight: 500;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.18em;
     color: var(--lavender-dark);
-    margin-top: 0.4rem;
+    margin-top: 0.55rem;
 }
 
 .couple-names .ampersand {
