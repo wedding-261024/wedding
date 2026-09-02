@@ -174,32 +174,27 @@ function loadConfiguration() {
 }
 
 function generateDefaultGalleryArray() {
-    // gallery_01~03은 인사말 섹션의 원형 대표 사진 뱃지로 사용하므로 그리드에서는 제외
+    // 새 갤러리 사진 (모바일용으로 압축). gallery_01~03(뱃지)·gallery_17(히어로)은 별도 사용
     return [
-        "images/gallery_04.jpg",
-        "images/gallery_06.jpg",
-        "images/gallery_07.jpg",
-        "images/gallery_08.jpg",
-        "images/gallery_09.jpg",
-        "images/gallery_10.jpg",
-        "images/gallery_11.jpg",
-        "images/gallery_12.jpg",
-        "images/gallery_13.jpg",
-        "images/gallery_14.jpg",
-        "images/gallery_15.jpg",
-        "images/gallery_16.jpg",
-        "images/gallery_17.jpg",
-        "images/gallery_19.jpg",
-        "images/gallery_20.jpg",
-        "images/gallery_21.jpg",
-        "images/gallery_24.jpg",
-        "images/gallery_25.jpg",
-        "images/gallery_26.jpg",
-        "images/gallery_27.jpg",
-        "images/gallery_28.jpg",
-        "images/gallery_29.jpg",
-        "images/gallery_31.jpg",
-        "images/gallery_33.jpg"
+        "images/moment_01.jpg",
+        "images/moment_02.jpg",
+        "images/moment_03.jpg",
+        "images/moment_04.jpg",
+        "images/moment_05.jpg",
+        "images/moment_06.jpg",
+        "images/moment_07.jpg",
+        "images/moment_08.jpg",
+        "images/moment_09.jpg",
+        "images/moment_10.jpg",
+        "images/moment_11.jpg",
+        "images/moment_12.jpg",
+        "images/moment_13.jpg",
+        "images/moment_14.jpg",
+        "images/moment_15.jpg",
+        "images/moment_16.jpg",
+        "images/moment_17.jpg",
+        "images/moment_18.jpg",
+        "images/moment_19.jpg"
     ];
 }
 
