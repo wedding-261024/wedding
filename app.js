@@ -179,7 +179,6 @@ function generateDefaultGalleryArray() {
         "images/moment_01.jpg",
         "images/moment_02.jpg",
         "images/moment_03.jpg",
-        "images/moment_04.jpg",
         "images/moment_05.jpg",
         "images/moment_06.jpg",
         "images/moment_07.jpg",
