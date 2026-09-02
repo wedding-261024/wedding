@@ -306,6 +306,13 @@ body {
     font-size: 1rem;
 }
 
+.baptismal-name {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--lavender-dark);
+    margin-left: 0.15rem;
+}
+
 /* --- Calendar Section --- */
 .calendar-section {
     background-color: var(--bg-soft);
