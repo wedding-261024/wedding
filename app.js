@@ -141,6 +141,7 @@ document.addEventListener("DOMContentLoaded", function() {
         initGuestbook();
         initRsvp();
         initRsvpModal();
+        initContactModal();
         initEditor();
         initProtection();
     });
@@ -914,6 +915,33 @@ function initRsvpModal() {
     if (!dismissed && !hiddenToday) {
         setTimeout(openRsvpModal, 700);
     }
+}
+
+// 9-4. 연락하기 모달 (신랑·신부·혼주)
+function initContactModal() {
+    const modal = document.getElementById('contact-modal');
+    if (!modal) return;
+
+    const openBtn = document.getElementById('contact-open-btn');
+    const closeBtn = document.getElementById('contact-modal-close');
+    const backdrop = document.getElementById('contact-modal-backdrop');
+
+    function openContact() {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeContact() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    if (openBtn) openBtn.addEventListener('click', openContact);
+    if (closeBtn) closeBtn.addEventListener('click', closeContact);
+    if (backdrop) backdrop.addEventListener('click', closeContact);
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('active')) closeContact();
+    });
 }
 
 // 10. Editor Panel Customization
