@@ -236,6 +236,18 @@ body {
     margin: 0 0.5rem;
 }
 
+.couple-baptismal {
+    font-family: var(--font-eng);
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+    color: var(--lavender-dark);
+    margin-top: -0.7rem;
+    margin-bottom: 1.4rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1.2s forwards 0.65s;
+}
+
 .wedding-meta {
     opacity: 0;
     transform: translateY(20px);

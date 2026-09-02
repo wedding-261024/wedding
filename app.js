@@ -472,7 +472,7 @@ function initLightbox(imagesList) {
 
     function startAutoPlay() {
         stopAutoPlay();
-        autoTimer = setInterval(showNext, 3000); // 3초마다 다음 사진
+        autoTimer = setInterval(showNext, 4000); // 4초마다 다음 사진
     }
 
     function openLightbox(index) {
@@ -480,7 +480,7 @@ function initLightbox(imagesList) {
         lightboxImg.src = imagesList[currentIndex];
         lightbox.classList.add('active');
         document.body.style.overflow = 'hidden';
-        startAutoPlay(); // 클릭으로 열면 3초 뒤부터 자동으로 다음 사진
+        startAutoPlay(); // 열면 4초 뒤부터 자동으로 다음 사진
     }
 
     function closeLightbox() {
@@ -541,6 +541,32 @@ function initLightbox(imagesList) {
         if (e.key === 'ArrowRight') { showNext(); startAutoPlay(); }
         if (e.key === 'ArrowLeft') { showPrev(); startAutoPlay(); }
     };
+
+    // 손가락 스와이프로 사진 넘기기 (모바일)
+    let touchStartX = 0, touchStartY = 0, touchMoved = false;
+    lightbox.addEventListener('touchstart', function(e) {
+        const t = e.changedTouches[0];
+        touchStartX = t.screenX;
+        touchStartY = t.screenY;
+        touchMoved = false;
+    }, { passive: true });
+
+    lightbox.addEventListener('touchmove', function() {
+        touchMoved = true;
+    }, { passive: true });
+
+    lightbox.addEventListener('touchend', function(e) {
+        if (!touchMoved) return;
+        const t = e.changedTouches[0];
+        const dx = t.screenX - touchStartX;
+        const dy = t.screenY - touchStartY;
+        // 가로 방향으로 충분히 밀었을 때만 넘김 (세로 스크롤/닫기와 구분)
+        if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+            if (dx < 0) showNext(); // 왼쪽으로 밀면 다음
+            else showPrev();        // 오른쪽으로 밀면 이전
+            startAutoPlay();
+        }
+    }, { passive: true });
 }
 
 // 7. Clipboard API
