@@ -1,3 +1,40 @@
+/* --- Paperlogy (페이퍼로지) 웹폰트 --- */
+@font-face {
+    font-family: 'Paperlogy';
+    src: url('fonts/Paperlogy-1Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Paperlogy';
+    src: url('fonts/Paperlogy-2ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Paperlogy';
+    src: url('fonts/Paperlogy-4Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Paperlogy';
+    src: url('fonts/Paperlogy-6SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Paperlogy';
+    src: url('fonts/Paperlogy-8ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* --- Reset & Global Variables --- */
 :root {
     --bg-color: #FFFFFF;         /* Pure White */
@@ -12,8 +49,8 @@
     --shadow-color: rgba(224, 178, 0, 0.10);
     
     --font-eng: 'Cinzel', serif;
-    --font-serif: 'Noto Serif KR', serif;
-    --font-display: 'Playfair Display', serif;
+    --font-serif: 'Paperlogy', 'Noto Serif KR', sans-serif;
+    --font-display: 'Paperlogy', 'Playfair Display', serif;
 }
 
 * {
