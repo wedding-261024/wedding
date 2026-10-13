@@ -651,13 +651,20 @@ function initGuestbook() {
     // 서버에서 방명록 목록 불러오기
     async function loadMessages() {
         listContainer.innerHTML = '<div style="text-align:center; color:#888; font-size:0.85rem; padding: 1.5rem 0;">불러오는 중...</div>';
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 12000); // 12초 내 응답 없으면 중단
         try {
-            const res = await fetch(API_URL + '?type=guestbook&t=' + Date.now());
+            const res = await fetch(API_URL + '?type=guestbook&t=' + Date.now(), { signal: controller.signal });
+            clearTimeout(timeoutId);
+            if (!res.ok) throw new Error('HTTP ' + res.status);
             const data = await res.json();
             renderMessages(data);
         } catch (e) {
+            clearTimeout(timeoutId);
             console.error('방명록 로드 실패:', e);
-            listContainer.innerHTML = '<div style="text-align:center; color:#c0392b; font-size:0.85rem; padding: 1.5rem 0;">방명록을 불러오지 못했습니다. 잠시 후 다시 시도해주세요.</div>';
+            listContainer.innerHTML = '<div style="text-align:center; color:#c0392b; font-size:0.85rem; padding: 1.5rem 0;">방명록을 불러오지 못했습니다.<br><button type="button" id="guestbook-retry-btn" class="submit-btn" style="margin-top:0.8rem; max-width:160px;">다시 시도</button></div>';
+            const retryBtn = document.getElementById('guestbook-retry-btn');
+            if (retryBtn) retryBtn.addEventListener('click', loadMessages);
         }
     }
 
