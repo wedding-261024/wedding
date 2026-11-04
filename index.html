@@ -290,39 +290,6 @@
         <i data-lucide="settings"></i>
     </button>
 
-    <!-- Editor Overlay Panel -->
-    <div class="edit-panel" id="edit-panel">
-        <div class="edit-panel-header">
-            <h3>청첩장 정보 편집기</h3>
-            <button class="edit-panel-close-btn" id="edit-panel-close-btn"><i data-lucide="x"></i></button>
-        </div>
-        
-        <form class="edit-panel-body" id="edit-form" onsubmit="return false;">
-            <!-- 신랑 & 신부 정보 -->
-            <div class="edit-section">
-                <h4 class="edit-section-title"><i data-lucide="user"></i> 신랑 & 신부 정보</h4>
-                <div class="edit-row">
-                    <div class="edit-field">
-                        <label>신랑 이름</label>
-                        <input type="text" id="input-groom-name" value="민우">
-                    </div>
-                    <div class="edit-field">
-                        <label>신부 이름</label>
-                        <input type="text" id="input-bride-name" value="서연">
-                    </div>
-                </div>
-                <div class="edit-row">
-                    <div class="edit-field">
-                        <label>신랑 부모님 (부 · 모)</label>
-                        <input type="text" id="input-groom-parents" value="김철수 · 이영희">
-                    </div>
-                    <div class="edit-field">
-                        <label>신부 부모님 (부 · 모)</label>
-                        <input type="text" id="input-bride-parents" value="박영식 · 최정숙">
-                    </div>
-                </div>
-            </div>
-
             <!-- 예식 일시 -->
             <div class="edit-section">
                 <h4 class="edit-section-title"><i data-lucide="calendar"></i> 예식 일시</h4>
@@ -373,81 +340,7 @@
                 </div>
             </div>
 
-            <!-- 계좌 정보 (신랑측) -->
-            <div class="edit-section">
-                <h4 class="edit-section-title"><i data-lucide="credit-card"></i> 신랑측 계좌</h4>
-                <div class="edit-row">
-                    <div class="edit-field">
-                        <label>본인 은행</label>
-                        <input type="text" id="input-groom-bank-1" value="국민은행">
-                    </div>
-                    <div class="edit-field">
-                        <label>본인 계좌번호</label>
-                        <input type="text" id="input-groom-account-1" value="110-345-678901">
-                    </div>
-                </div>
-                <div class="edit-row">
-                    <div class="edit-field">
-                        <label>본인 예금주</label>
-                        <input type="text" id="input-groom-owner-1" value="김민우">
-                    </div>
-                </div>
-                <div class="edit-row">
-                    <div class="edit-field">
-                        <label>혼주 은행</label>
-                        <input type="text" id="input-groom-bank-parent" value="신한은행">
-                    </div>
-                    <div class="edit-field">
-                        <label>혼주 계좌번호</label>
-                        <input type="text" id="input-groom-account-parent" value="012-345-6789">
-                    </div>
-                </div>
-                <div class="edit-row">
-                    <div class="edit-field">
-                        <label>혼주 예금주</label>
-                        <input type="text" id="input-groom-owner-parent" value="김철수 (혼주)">
-                    </div>
-                </div>
-            </div>
-
-            <!-- 계좌 정보 (신부측) -->
-            <div class="edit-section">
-                <h4 class="edit-section-title"><i data-lucide="credit-card"></i> 신부측 계좌</h4>
-                <div class="edit-row">
-                    <div class="edit-field">
-                        <label>본인 은행</label>
-                        <input type="text" id="input-bride-bank-1" value="우리은행">
-                    </div>
-                    <div class="edit-field">
-                        <label>본인 계좌번호</label>
-                        <input type="text" id="input-bride-account-1" value="1002-123-456789">
-                    </div>
-                </div>
-                <div class="edit-row">
-                    <div class="edit-field">
-                        <label>본인 예금주</label>
-                        <input type="text" id="input-bride-owner-1" value="박서연">
-                    </div>
-                </div>
-                <div class="edit-row">
-                    <div class="edit-field">
-                        <label>혼주 은행</label>
-                        <input type="text" id="input-bride-bank-parent" value="하나은행">
-                    </div>
-                    <div class="edit-field">
-                        <label>혼주 계좌번호</label>
-                        <input type="text" id="input-bride-account-parent" value="987-654-321012">
-                    </div>
-                </div>
-                <div class="edit-row">
-                    <div class="edit-field">
-                        <label>혼주 예금주</label>
-                        <input type="text" id="input-bride-owner-parent" value="박영식 (혼주)">
-                    </div>
-                </div>
-            </div>
-
-            <!-- 사진 편집 섹션 -->
+                  <!-- 사진 편집 섹션 -->
             <div class="edit-section">
                 <h4 class="edit-section-title"><i data-lucide="image"></i> 청첩장 사진 업로드</h4>
                 <p class="edit-notice-text">사진을 업로드하면 웹 용량 최적화 압축을 거쳐 브라우저 내부 IndexedDB 저장소에 안전하게 보관됩니다 (최대 30장).</p>
@@ -579,21 +472,7 @@
                             <a href="sms:" class="contact-btn sms" aria-label="이건호에게 문자"><i data-lucide="mail"></i></a>
                         </div>
                     </div>
-                    <div class="contact-person">
-                        <span class="contact-name">아버지 이승우</span>
-                        <div class="contact-actions">
-                            <a href="tel:" class="contact-btn call" aria-label="이승우에게 전화"><i data-lucide="phone"></i></a>
-                            <a href="sms:" class="contact-btn sms" aria-label="이승우에게 문자"><i data-lucide="mail"></i></a>
-                        </div>
-                    </div>
-                    <div class="contact-person">
-                        <span class="contact-name">어머니 오용희</span>
-                        <div class="contact-actions">
-                            <a href="tel:" class="contact-btn call" aria-label="오용희에게 전화"><i data-lucide="phone"></i></a>
-                            <a href="sms:" class="contact-btn sms" aria-label="오용희에게 문자"><i data-lucide="mail"></i></a>
-                        </div>
-                    </div>
-                </div>
+                 </div>
 
                 <!-- 신부측 -->
                 <div class="contact-col">
