@@ -99,7 +99,6 @@ const DEFAULT_CONFIG = {
     weddingTime: "12:00",
     venueName: "수원 정자동 주교좌성당",
     venueAddress: "경기도 수원시 장안구 이목로 37",
-    venuePhone: "Tel. 031-252-6776",
     greetingTitle: "소중한 분들을 초대합니다",
     greetingContent: `서로 마주 보며 자라온 두 사람이
 이제 같은 곳을 바라보며 나아가고자 합니다.
@@ -242,7 +241,6 @@ function applyConfigToDOM(heroImg, galleryList) {
     // Venue details
     document.getElementById('txt-venue-name').innerText = currentConfig.venueName;
     document.getElementById('txt-venue-address').innerText = currentConfig.venueAddress;
-    document.getElementById('txt-venue-phone').innerText = currentConfig.venuePhone;
     document.getElementById('txt-map-pin').innerText = currentConfig.venueName;
     
     // Map Search URL update
@@ -1018,7 +1016,6 @@ function initEditor() {
         
         document.getElementById('input-venue-name').value = currentConfig.venueName;
         document.getElementById('input-venue-address').value = currentConfig.venueAddress;
-        document.getElementById('input-venue-phone').value = currentConfig.venuePhone;
         
         document.getElementById('input-greeting-title').value = currentConfig.greetingTitle;
         document.getElementById('input-greeting-content').value = currentConfig.greetingContent;
@@ -1159,7 +1156,6 @@ function initEditor() {
             
             venueName: document.getElementById('input-venue-name').value.trim(),
             venueAddress: document.getElementById('input-venue-address').value.trim(),
-            venuePhone: document.getElementById('input-venue-phone').value.trim(),
             
             greetingTitle: document.getElementById('input-greeting-title').value.trim(),
             greetingContent: document.getElementById('input-greeting-content').value,
