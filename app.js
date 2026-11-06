@@ -105,19 +105,7 @@ const DEFAULT_CONFIG = {
 
 저희 두 사람의 약속을 완성하는 특별한 날,
 가까이서 축복해 주시면 더없는 기쁨이 되겠습니다.
-귀한 발걸음으로 저희의 시작을 함께해 주십시오.`,
-    groomBank1: "카카오뱅크",
-    groomAccount1: "3333-08-3918476",
-    groomOwner1: "이건호",
-    groomBankParent: "우리은행",
-    groomAccountParent: "1002-355-758209",
-    groomOwnerParent: "이승우",
-    brideBank1: "카카오뱅크",
-    brideAccount1: "3333-05-9940781",
-    brideOwner1: "최서희",
-    brideBankParent: "카카오뱅크",
-    brideAccountParent: "3333-36-8233766",
-    brideOwnerParent: "황유림"
+귀한 발걸음으로 저희의 시작을 함께해 주십시오.`
 };
 
 // Initialize application
@@ -135,7 +123,6 @@ document.addEventListener("DOMContentLoaded", function() {
             applyConfigToDOM();
         }
         initScrollAnimations();
-        initClipboard();
         initAccordion();
         initGuestbook();
         initContactModal();
@@ -244,23 +231,6 @@ function applyConfigToDOM(heroImg, galleryList) {
     // Map Search URL update
     document.getElementById('btn-naver-map').href = `https://map.naver.com/v5/search/${encodeURIComponent(currentConfig.venueName)}`;
     document.getElementById('btn-kakao-map').href = `https://map.kakao.com/?q=${encodeURIComponent(currentConfig.venueName)}`;
-    
-    // Bank accounts
-    document.getElementById('groom-bank-1').innerText = currentConfig.groomBank1;
-    document.getElementById('groom-account-1').innerText = currentConfig.groomAccount1;
-    document.getElementById('groom-owner-1').innerText = currentConfig.groomOwner1;
-    
-    document.getElementById('groom-bank-parent').innerText = currentConfig.groomBankParent;
-    document.getElementById('groom-account-parent').innerText = currentConfig.groomAccountParent;
-    document.getElementById('groom-owner-parent').innerText = currentConfig.groomOwnerParent;
-    
-    document.getElementById('bride-bank-1').innerText = currentConfig.brideBank1;
-    document.getElementById('bride-account-1').innerText = currentConfig.brideAccount1;
-    document.getElementById('bride-owner-1').innerText = currentConfig.brideOwner1;
-    
-    document.getElementById('bride-bank-parent').innerText = currentConfig.brideBankParent;
-    document.getElementById('bride-account-parent').innerText = currentConfig.brideAccountParent;
-    document.getElementById('bride-owner-parent').innerText = currentConfig.brideOwnerParent;
     
     // Generate Calendar dynamically
     renderDynamicCalendar(currentConfig.weddingDate);
@@ -566,34 +536,6 @@ function initLightbox(imagesList) {
     }, { passive: true });
 }
 
-// 7. Clipboard API
-function initClipboard() {
-    const copyBtns = document.querySelectorAll('.copy-btn');
-    const toast = document.getElementById('toast');
-    let toastTimeout;
-    
-    copyBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            const targetId = this.getAttribute('data-target');
-            const targetEl = document.getElementById(targetId);
-            if (!targetEl) return;
-            
-            const textToCopy = targetEl.innerText;
-            
-            navigator.clipboard.writeText(textToCopy).then(() => {
-                clearTimeout(toastTimeout);
-                toast.classList.add('active');
-                
-                toastTimeout = setTimeout(() => {
-                    toast.classList.remove('active');
-                }, 2000);
-            }).catch(err => {
-                console.error('클립보드 복사 실패: ', err);
-            });
-        });
-    });
-}
-
 // 8. Accordion
 function initAccordion() {
     const headers = document.querySelectorAll('.accordion-header');
@@ -840,19 +782,6 @@ function initEditor() {
         document.getElementById('input-greeting-title').value = currentConfig.greetingTitle;
         document.getElementById('input-greeting-content').value = currentConfig.greetingContent;
         
-        document.getElementById('input-groom-bank-1').value = currentConfig.groomBank1;
-        document.getElementById('input-groom-account-1').value = currentConfig.groomAccount1;
-        document.getElementById('input-groom-owner-1').value = currentConfig.groomOwner1;
-        document.getElementById('input-groom-bank-parent').value = currentConfig.groomBankParent;
-        document.getElementById('input-groom-account-parent').value = currentConfig.groomAccountParent;
-        document.getElementById('input-groom-owner-parent').value = currentConfig.groomOwnerParent;
-        
-        document.getElementById('input-bride-bank-1').value = currentConfig.brideBank1;
-        document.getElementById('input-bride-account-1').value = currentConfig.brideAccount1;
-        document.getElementById('input-bride-owner-1').value = currentConfig.brideOwner1;
-        document.getElementById('input-bride-bank-parent').value = currentConfig.brideBankParent;
-        document.getElementById('input-bride-account-parent').value = currentConfig.brideAccountParent;
-        document.getElementById('input-bride-owner-parent').value = currentConfig.brideOwnerParent;
     }
     
     // Single file uploader (Hero Image)
@@ -978,21 +907,8 @@ function initEditor() {
             venueAddress: document.getElementById('input-venue-address').value.trim(),
             
             greetingTitle: document.getElementById('input-greeting-title').value.trim(),
-            greetingContent: document.getElementById('input-greeting-content').value,
+            greetingContent: document.getElementById('input-greeting-content').value
             
-            groomBank1: document.getElementById('input-groom-bank-1').value.trim(),
-            groomAccount1: document.getElementById('input-groom-account-1').value.trim(),
-            groomOwner1: document.getElementById('input-groom-owner-1').value.trim(),
-            groomBankParent: document.getElementById('input-groom-bank-parent').value.trim(),
-            groomAccountParent: document.getElementById('input-groom-account-parent').value.trim(),
-            groomOwnerParent: document.getElementById('input-groom-owner-parent').value.trim(),
-            
-            brideBank1: document.getElementById('input-bride-bank-1').value.trim(),
-            brideAccount1: document.getElementById('input-bride-account-1').value.trim(),
-            brideOwner1: document.getElementById('input-bride-owner-1').value.trim(),
-            brideBankParent: document.getElementById('input-bride-bank-parent').value.trim(),
-            brideAccountParent: document.getElementById('input-bride-account-parent').value.trim(),
-            brideOwnerParent: document.getElementById('input-bride-owner-parent').value.trim()
         };
         
         // Save text details
